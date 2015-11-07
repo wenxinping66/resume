@@ -281,18 +281,35 @@
             border: 10px solid #d8c;
         }
         .my_photo {
-            -webkit-transition: all 0.3s linear infinite;
-            -webkit-transform: translate3d(0, 0, 0) rotate(360);
-            transition: all 0.3s linear infinite;
-            transform: translate3d(0, 0, 0) rotate(360);
+           	animation: rota 5s linear infinite;
 
         }
         /*.my_photo:hover {
             -webkit-transform: rotate(720deg);
 			transform: rotate(720deg);
         }*/
-		
-
+		@-webkit-keyframes rota {
+			0%{
+				-webkit-transform: rotate(0deg);
+			}
+			50% {
+				-webkit-transform: rotate(180deg);
+			}
+			0%{
+				-webkit-transform: rotate(3600deg);
+			}
+		}
+		@keyframes rota {
+			0%{
+				transform: rotate(0deg);
+			}
+			50% {
+				transform: rotate(180deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
 
         /*屏幕适配*/
         @media screen and (max-width: 900px) {
