@@ -281,16 +281,17 @@
             border: 10px solid #d8c;
         }
         .my_photo {
-            -webkit-transition: all 0.3s ease-in-out;
-            -webkit-transform: translate3d(0, 0, 0);
-            transition: all 0.3s ease-in-out;
-            transform: translate3d(0, 0, 0);
+            -webkit-transition: all 0.3s linear infinite;
+            -webkit-transform: translate3d(0, 0, 0) rotate(360);
+            transition: all 0.3s linear infinite;
+            transform: translate3d(0, 0, 0) rotate(360);
+
         }
-        .my_photo:hover {
+        /*.my_photo:hover {
             -webkit-transform: rotate(720deg);
-
-        }
-
+			transform: rotate(720deg);
+        }*/
+		
 
 
         /*屏幕适配*/
