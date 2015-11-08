@@ -1,0 +1,14 @@
+
+#boxb * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+#boxb {
+    height: auto !important;
+}
+#boxb .boxb_content {
+    height: auto !important;
+    width: auto !important;
+}
+

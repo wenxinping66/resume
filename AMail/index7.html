@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../../插件等/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <script src="../../../插件等/bower_components/angular/angular.js"></script>
+    <script src="../../../插件等/bower_components/angular-route/angular-route.js"></script>
+    <script src="../../../插件等/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../../插件等/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/myApp.services.js"></script>
+    <script src="js/controller7.js"></script>
+</head>
+<body>
+
+<div ng-controller="ServiceController">
+    <label for="username">Type in a GitHub username</label>
+    <input type="text" ng-model="username" id="username" placeholder="Enter a GitHub username"/>
+    <ul>
+        <li ng-repeat="event in events">{{event.actor.login}}{{ event.repo.name }}</li>
+    </ul>
+    <div>{{events}}</div>
+</div>
+
+</body>
+</html>

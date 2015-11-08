@@ -1,0 +1,107 @@
+<table>
+    <tr>
+        <td><strong>Sender</strong></td>
+        <td><strong>Subject</strong></td>
+        <td><strong>Date</strong></td>
+    </tr>
+    <tr ng-repeat='message in messages'>
+        <td>{{message.sender}}</td>
+        <td><a href='#/view/{{message.id}}'>{{message.subject}}</a></td>
+        <td>{{message.date}}</td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+<!--
+<h2>{{['Ari','Lerner','Likes','To','Eat','Pizza'] | filter: 'e'}}</h2>
+<h2>{{[{
+        'name': 'Ari',
+        'City': 'San Francisco',
+        'favorite food': 'Pizza'
+        },{
+        'name': 'Nate',
+        'City': 'San Francisco',
+        'favorite food': 'indian food'
+        }] | filter:{'favorite food': 'Pizza'}
+    }}
+</h2>
+<h2>
+    {{[{
+        'name': 'Ari',
+        'status': 'awake'
+        },{
+        'name': 'Q',
+        'status': 'sleeping'
+        },{
+        'name': 'Nate',
+        'status': 'awake'
+        }] | orderBy:'name'
+    }}
+</h2>
+<h2>{{ "San Francisco is very cloudy" | uppercase }}</h2>
+-->
+
+
+
+
+<!--
+<div class="container">
+    <div class="row">
+        <form name="signup_form" novalidate ng-submit="signupForm()">
+            <fieldset>
+                <legend>Signup</legend>
+                <div class="large-12 columns">
+                    <label>Your name</label>
+                    <input type="text" placeholder="Name" name="name" ng-model="signup.name" ng-minlength="3" ng-maxlength="20" required />
+                    <div class="error" ng-show="signup_form.name.$dirty && signup_form.name.$invalid">
+                        <small class="error"
+                               ng-show="signup_form.name.$error.required">
+                            Your name is required.
+                        </small>
+                        <small class="error"
+                               ng-show="signup_form.name.$error.minlength">
+                            Your name is required to be at least 3 characters
+                        </small>
+                        <small class="error"
+                               ng-show="signup_form.name.$error.maxlength">
+                            Your name cannot be longer than 20 characters
+                        </small>
+                    </div>
+                </div>
+                <button type="submit" class="button radius">Submit</button>
+            </fieldset>
+
+        </form>
+
+    </div>
+</div>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

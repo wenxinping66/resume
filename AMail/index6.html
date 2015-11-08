@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="hashbang-mode">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../../插件等/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <script src="../../../插件等/bower_components/angular/angular.js"></script>
+    <script src="../../../插件等/bower_components/angular-route/angular-route.js"></script>
+    <script src="../../../插件等/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../../插件等/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./js/controller6.js"></script>
+    <script src="./js/FakeBrower.js"></script>
+    <script src="js/addressBar.js"></script>
+    <script src="js/protractor.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 10px;
+            float: left;
+        }
+        .pox {
+            width: 100px;
+            height: 100px;
+            background: green;
+            margin: 10px;
+            color: #F54747;
+        }
+    </style>
+    <!--<script>-->
+        <!--window.onload = function() {-->
+            <!--var aBox = document.getElementsByClassName('box');-->
+            <!--var aPox = document.getElementsByClassName('pox');-->
+            <!--for(var i=0; i<aBox.length; i++) {-->
+                <!--(function(i) {s-->
+                    <!--aBox[i].onmouseover= function() {-->
+                        <!--aPox[i].style.display='none';-->
+                    <!--}-->
+                <!--})(i);-->
+            <!--}-->
+        <!--}-->
+    <!--</script>-->
+</head>
+<body>
+<!--<div>-->
+    <!--<div class="box"></div>-->
+    <!--<div class="box"></div>-->
+    <!--<div class="box"></div>-->
+    <!--<div class="box"></div>-->
+<!--</div>-->
+<!--<div>-->
+    <!--<div class="pox"></div>-->
+    <!--<div class="pox"></div>-->
+    <!--<div class="pox"></div>-->
+    <!--<div class="pox"></div>-->
+<!--</div>-->
+<div ng-controller="LocationController">
+    <div ng-address-bar></div><br><br>
+    <div>
+        $location.protocol() = <span ng-bind="$location.protocol()"></span> <br>
+        $location.host() = <span ng-bind="$location.host()"></span> <br>
+        $location.port() = <span ng-bind="$location.port()"></span> <br>
+        $location.path() = <span ng-bind="$location.path()"></span> <br>
+        $location.search() = <span ng-bind="$location.search()"></span> <br>
+        $location.hash() = <span ng-bind="$location.hash()"></span> <br>
+    </div>
+    <div id="navigation">
+        <a href="http://www.example.com/base/first?a=b">/base/first?a=b</a> |
+        <a href="http://www.example.com/base/sec/ond?flag#hash">sec/ond?flag#hash</a> |
+        <a href="/other-base/another?search">external</a>
+    </div>
+</div>
+
+</body>
+</html>

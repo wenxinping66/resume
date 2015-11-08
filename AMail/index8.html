@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../../插件等/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <script src="../../../插件等/bower_components/angular/angular.js"></script>
+    <script src="../../../插件等/bower_components/angular-route/angular-route.js"></script>
+    <script src="../../../插件等/bower_components/restangular/src/restangular.js"></script>
+    <script src="../../../插件等/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../../插件等/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/controller8.js"></script>
+    <style>
+        p::selection {
+            background: #F54747;
+        }
+        @media screen and(max-width: 768px) {
+            .comWidth {
+                width: 60%;
+            }
+        }
+    </style>
+    <script>
+      window.onload=function() {
+          if (!isEmpty(keyword)) {
+              if ($('.form-group-tabs li').length < 5) {
+                  var have = false;
+                  $.each($('.form-group-tabs li'), function() {
+                      if($(this).text() == keyword) {
+                          have = true;
+                      }
+                  });
+                  if(!have) {
+                      if($('.form-group-tabs li').length >= 5) {
+                          $(this).css('background', "#DCB2AD");
+                          alert();
+                      }else{
+                          $(this).css('background', "#db2a18");
+                      }
+                      var li = $('<li><span>&times;</span></li>');
+                      $(li).append(keyword);
+                      $(this).siblings('.form-group-tabs').show().append(li);
+                      var arrLi = $(this).siblings('.form-group-tabs').text().split('×');
+                      arrLi.splice(0, 1);
+                      $('#keywords').val(arrLi.toString());
+                      $(keywordItem).val('');
+                      //
+
+                  }
+              }
+              else {
+                  
+              }
+          }
+      }
+    </script>
+
+</head>
+<body>
+<p>ldjfadjfladfjdljfdljfl</p>
+</body>
+</html>

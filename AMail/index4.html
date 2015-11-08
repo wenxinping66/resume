@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../../插件等/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <script src="../../../插件等/bower_components/angular/angular.js"></script>
+    <script src="../../../插件等/bower_components/angular-route/angular-route.js"></script>
+    <script src="../../../插件等/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../../插件等/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./js/controller4.js"></script>
+    <style>
+        input.ng-invalid {
+            border: 1px solid red;
+        }
+        input.ng-valid {
+            border: 1px solid green;
+        }
+        .red {
+            background-color: red;
+            text-align: inherit;
+        }
+    </style>
+</head>
+<body>
+
+<form name="signup_form" ng-controller="FormController" ng-submit="submitForm()" novalidate>
+    <div ng-repeat="field in fields" ng-form="signup_form_input">
+        <input type="text" name="dynamic_input" ng-required="field.isRequired" ng-model="field.name" placeholder="{{field.placeholder}}"/>
+        <div ng-show="signup_form_input.dynamic_input.$dirty && signup_form_input.dynamic_input.$invalid">
+            <span class="error" ng-show="signup_form_input.dynamic_input.$error.required">
+                The field is required.
+            </span>
+        </div>
+    </div>
+    <button type="submit" ng-disabled="signup_form.$invalid">
+        Submit All
+    </button>
+</form>
+<div ng-controller="CounterController">
+    <button ng-click="count = count + 1" ng-init="count=0">Increment</button>
+    count: {{ count }}
+    <button ng-click="decrement()">Decrement</button>
+</div>
+<div ng-controller="CityController">
+    <select ng-model="city" ng-options="city.name for city in cities">
+        <option value="">Choose City</option>
+    </select>
+    Best City: {{ city.name }}
+</div>
+
+<form ng-submit="submit()" ng-controller="FormController2">
+    Enter text and hit enter:
+    <input type="text" ng-model="person.name" name="person.name" />
+    <input type="submit" name="person.name" value="Submit" />
+    <code>people={{people}}</code>
+    <ul ng-repeat="object in people">
+        <li>{{ object.name }}</li>
+    </ul>
+</form>
+<div ng-controller="LotteryController">
+    <div ng-class="{red: x > 5}" ng-if="x > 5">
+        You won!
+    </div>
+    <button ng-click="x = generateNumber()" ng-init="x = 0">
+        Draw Number
+    </button>
+    <p>Number is: {{ x }}</p>
+</div>
+<p class="dd_four double">
+    <div class="textarea" id="mood_message" spellcheck="false" accesskey="q" contenteditable="true" placeholder="你想说说什么呢" style="background: green"></div>
+    <input type="button" id="mood_add" name="add" value="发布" class="gtc_3_bnt" onclick="pushMood();">
+</p>
+</body>
+</html>

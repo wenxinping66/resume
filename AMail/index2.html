@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../../插件等/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <script src="../../../插件等/bower_components/angular/angular.js"></script>
+    <script src="../../../插件等/bower_components/angular-route/angular-route.js"></script>
+    <script src="../../../插件等/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../../插件等/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./js/controller2.js"></script>
+    <style>
+        .slide {
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+            height: 500px;
+        }
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 910px;
+            height: 480px;
+        }
+        .current {
+            z-index: 2;
+        }
+        .content {
+            width: 500px;
+            height: 50px;
+            border: 1px solid #666;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide">
+    <img src="007.jpg">
+    <img src="008.jpg"/>
+    <img src="007.jpg"/>
+    <img src="008.jpg"/>
+</div>
+<div class="content" contenteditable="true">我打飞机啊到了房间大龙卷风达到减肥劳动节放假倒垃圾</div>
+<button class="btn">查看光标</button>
+<script>
+    setInterval(function(){$('img').eq(0).appendTo($('.slide'))}, 3000);
+    var foo = "11"+2-"1";
+    console.log(foo);
+    console.log(typeof foo);
+    console.log(document.documentElement.clientWidth, document.body.clientWidth)
+    function setCaretPosition(ctrl, pos) {//设置光标位置函数
+        if (ctrl.setSelectionRange) {
+            ctrl.focus();
+            ctrl.setSelectionRange(pos, pos);
+        }
+        else if (ctrl.createTextRange) {
+            var range = ctrl.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
+        }
+    }
+
+</script>
+</body>
+</html>
+
